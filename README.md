@@ -73,8 +73,6 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2024-08-ax
 
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
-## 🐺 C4 team: paste this into the bottom of the sponsor's audit repo `README`, then delete this line
-
 https://github.com/axelarnetwork/audits/tree/main
 Please refer to previous audits, especially for AxelarAmplifierGateway, interchain-token-service, axelar-amplifier
 
