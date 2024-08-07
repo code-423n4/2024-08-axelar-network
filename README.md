@@ -26,7 +26,18 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+## What is Axelar?
+Axelar delivers secure cross-chain communication for Web3, enabling you to build Interchain dApps that grow beyond a single chain. Secure means Axelar is built on proof-of-stake, the battle-tested approach used by Ethereum, Polygon, Cosmos, and more. Cross-chain communication means you can build a complete experience for your users that lets them interact with any asset, any application, on any chain with one click.
+
+## Interchain Token Service (ITS): 
+The Interchain Token Service allows users and developers to easily create their own token bridge, handling all underlying interchain communication. Users can either use the provided InterchainToken or implement their own. There are multiple configuration options for bridges, and users must trust the deployer of any bridge they use, similar to how they must trust the operator of a token. To enhance trustworthiness, the plan is to eventually remove the service's upgradability.
+
+## Interchain Amplifier:
+The Interchain Amplifier enables developers to permissionlessly set up connections to the Axelar network. Developers gain access to Axelar's interconnected network of chains and can "amplify" their resources by paying the cost equivalent to developing only one connection. They can establish connections between new ecosystems or existing chains to add new network properties, such as improved security or better delivery and availability.
+- More details on Amplifier: https://docs.axelar.dev/dev/amplifier/introduction
+
+## Axelar Amplifier Gateway:
+Axelar Amplifier Gateway is a smart contract that lives on the external chain that is connecting to the Axelar Network. It faciliates sending and receiving of cross-chain messages to other chains via the Axelar Network. AxelarAmplifierGateway is the EVM reference implementation of the external gateway.
 
 ## Links
 
@@ -35,6 +46,7 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 - **Website:** https://www.axelar.network/
 - **X/Twitter:** https://twitter.com/axelarnetwork
 - **Discord:** https://discord.com/invite/aRZ3Ra6f7D
+- **Youtube:** https://www.youtube.com/@axelar-network
 
 ---
 
