@@ -1,0 +1,6 @@
+[alias]
+wasm = "build --release --lib --target wasm32-unknown-unknown --locked --workspace --exclude ampd --exclude integration-tests"
+unit-test = "test --lib"
+
+[build]
+rustflags = ["--cfg", "tracing_unstable"]

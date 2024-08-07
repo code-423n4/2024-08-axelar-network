@@ -1,0 +1,57 @@
+name: Coverage
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - releases/**
+
+jobs:
+  coverage:
+    runs-on: blacksmith-16vcpu-ubuntu-2204
+    env:
+      CARGO_TERM_COLOR: always
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: 1.78.0
+          override: true
+
+      - name: Install protoc
+        uses: arduino/setup-protoc@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install libclang-dev
+        run: sudo apt-get install libclang-dev
+
+      - name: Cache build artifacts
+        uses: useblacksmith/rust-cache@v3.0.1
+        id: cache
+        with:
+          shared-key: "cache-codecov"
+
+      - name: Log crates.toml
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: cat /home/runner/.cargo/.crates.toml
+
+      - name: Install cargo-llvm-cov
+        uses: taiki-e/install-action@cargo-llvm-cov
+
+      - name: Generate code coverage
+        run: cargo llvm-cov --workspace --lcov --output-path lcov.info
+        env:
+          RUSTFLAGS: --cfg tracing_unstable
+          RUST_BACKTRACE: 1
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: lcov.info
+          fail_ci_if_error: true

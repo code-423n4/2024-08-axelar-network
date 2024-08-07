@@ -1,0 +1,70 @@
+name: Update and tag release version
+
+on:
+  workflow_dispatch:
+    inputs:
+      binary-to-release:
+        description: Binary to release
+        type: choice
+        options:
+          - ampd
+          - router
+          - gateway
+          - multisig
+          - multisig-prover
+          - nexus-gateway
+          - rewards
+          - service-registry
+          - voting-verifier
+          - coordinator
+      dry-run:
+        description: Dry run
+        type: boolean
+        default: true
+
+jobs:
+  release:
+    name: Release ${{ github.event.inputs.binary-to-release }}
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup variables for sub-project to release
+        id: setup-variables
+        shell: bash
+        run: |
+          binary="${{ github.event.inputs.binary-to-release }}"
+          declare -A binaries_data=(
+            ["ampd"]="ampd,/(major)|(major-ampd)/,/(minor)|(minor-ampd)/,ampd packages"
+            ["router"]="router,/(major)|(major-router)|(major-contracts)|(major-connection-router)/,/(minor)|(minor-router)|(minor-contracts)|(minor-connection-router)/,contracts/router packages"
+            ["gateway"]="gateway,/(major)|(major-gateway)|(major-contracts)/,/(minor)|(minor-gateway)|(minor-contracts)/,contracts/gateway packages"
+            ["multisig"]="multisig,/(major)|(major-multisig)|(major-contracts)/,/(minor)|(minor-multisig)|(minor-contracts)/,contracts/multisig packages"
+            ["multisig-prover"]="multisig-prover,/(major)|(major-multisig-prover)|(major-contracts)/,/(minor)|(minor-multisig-prover)|(minor-contracts)/,contracts/multisig-prover packages"
+            ["nexus-gateway"]="nexus-gateway,/(major)|(major-nexus-gateway)|(major-contracts)/,/(minor)|(minor-nexus-gateway)|(minor-contracts)/,contracts/nexus-gateway packages"
+            ["rewards"]="rewards,/(major)|(major-rewards)|(major-contracts)/,/(minor)|(minor-rewards)|(minor-contracts)/,contracts/rewards packages"
+            ["service-registry"]="service-registry,/(major)|(major-service-registry)|(major-contracts)/,/(minor)|(minor-service-registry)|(minor-contracts)/,contracts/service-registry packages"
+            ["voting-verifier"]="voting-verifier,/(major)|(major-voting-verifier)|(major-contracts)/,/(minor)|(minor-voting-verifier)|(minor-contracts)/,contracts/voting-verifier packages"
+            ["coordinator"]="coordinator,/(major)|(major-coordinator)|(major-contracts)/,/(minor)|(minor-coordinator)|(minor-contracts)/,contracts/coordinator packages"
+          )
+
+          if [[ -n "${binaries_data[$binary]}" ]]; then
+              IFS=',' read -r binary_to_release major_pattern minor_pattern change_path <<< "${binaries_data[$binary]}"
+              echo "binary-to-release=$binary_to_release" >> "$GITHUB_OUTPUT"
+              echo "major-pattern=$major_pattern" >> "$GITHUB_OUTPUT"
+              echo "minor-pattern=$minor_pattern" >> "$GITHUB_OUTPUT"
+              echo "change-path=$change_path" >> "$GITHUB_OUTPUT"
+          else
+              echo "Unknown binary to release"
+              exit 1
+          fi
+
+      - name: Release ${{ github.event.inputs.binary-to-release }}
+        uses: ./.github/actions/release
+        with:
+          binary-to-release: ${{ steps.setup-variables.outputs.binary-to-release }}
+          dry-run: ${{ github.event.inputs.dry-run }}
+          major-pattern: ${{ steps.setup-variables.outputs.major-pattern }}
+          minor-pattern: ${{ steps.setup-variables.outputs.minor-pattern }}
+          change-path: ${{ steps.setup-variables.outputs.change-path }}
