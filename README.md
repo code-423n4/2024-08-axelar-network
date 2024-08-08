@@ -102,7 +102,7 @@ contracts/axelarnet-gateway/src/msg.rs|33||
 | interchain-token-service/contracts/utils/InterchainTokenDeployer.sol                    | 26   |         |                |
 | interchain-token-service/contracts/interchain-token/InterchainToken.sol                  | 63   |         |                |
 | interchain-token-service/contracts/utils/Create3Fixed.sol                                | 21   |         |                |
-| interchain-token-service/contracts/utils/ERC20.sol                                       | 55   |         |                |
+| interchain-token-service/contracts/interchain-token/ERC20.sol                            | 55   |         |                |
 | interchain-token-service/contracts/TokenHandler.sol                                     | 136  |         |                |
 | interchain-token-service/contracts/utils/Create3AddressFixed.sol                       | 12   |         |                |
 | interchain-token-service/contracts/utils/FlowLimit.sol                                   | 69   |         |                |
