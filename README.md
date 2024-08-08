@@ -56,7 +56,7 @@ Axelar Amplifier Gateway is a smart contract that lives on the external chain th
 
 ### Files in scope
 
-- For the [EVM Apmlifier Gateway](https://github.com/code-423n4/2024-08-axelar-network/tree/main/axelar-gmp-sdk-solidity) contracts:
+- For the [EVM Amplifier Gateway](https://github.com/code-423n4/2024-08-axelar-network/tree/main/axelar-gmp-sdk-solidity) contracts:
 
 | Contract                                          | SLOC | Purpose | Libraries used |
 | ------------------------------------------------- | ---- | ------- | -------------- |
@@ -127,7 +127,7 @@ Any files not under the scope tables are OUT OF SCOPE
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
 | ERC20 used by the protocol              |       Any (all possible ERC20s)             |
-| Test coverage                           | interchain-token-service: Functions 100%, Lines 99.11% - EVM Apmlifier Gateway: Functions 97.65%, Lines 99.86%                        |
+| Test coverage                           | interchain-token-service: Functions 100%, Lines 99.11% - EVM Amplifier Gateway: Functions 97.65%, Lines 99.86%                        |
 | ERC721 used  by the protocol            |            None              |
 | ERC777 used by the protocol             |           None                |
 | ERC1155 used by the protocol            |              None            |
@@ -243,7 +243,7 @@ npm run coverage
 ```
 More detailed info [here](https://github.com/axelarnetwork/interchain-token-service/tree/main?tab=readme-ov-file). 
 
-- For EVM Apmlifier Gateway (make sure you´re at the [axelar-gmp-sdk-solidity](https://github.com/code-423n4/2024-08-axelar-network/tree/main/axelar-gmp-sdk-solidity) folder :
+- For EVM Amplifier Gateway (make sure you´re at the [axelar-gmp-sdk-solidity](https://github.com/code-423n4/2024-08-axelar-network/tree/main/axelar-gmp-sdk-solidity) folder :
 ```bash
 npm ci
 npm run build
@@ -331,7 +331,7 @@ File                                    |  % Stmts | % Branch |  % Funcs |  % Li
 ----------------------------------------|----------|----------|----------|----------|----------------|
 </pre>
 
-- Test coverage for EVM Apmlifier Gateway contracts: 
+- Test coverage for EVM Amplifier Gateway contracts: 
 
 <pre>-------------------------------------|----------|----------|----------|----------|----------------|
 File                                 |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
