@@ -4,7 +4,7 @@
   - HM awards: $71,500 in USDC
   - QA awards: $3,000 in USDC
   - Judge awards: $6,000 in USDC
-  - Validator awards: $4,000 USDC
+  - Validator awards: $4,000 in USDC
   - Scout awards: $500 in USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-08-axelar-network/submit)
@@ -39,7 +39,7 @@ The Interchain Amplifier enables developers to permissionlessly set up connectio
 - More details on Amplifier: https://docs.axelar.dev/dev/amplifier/introduction
 
 ## Axelar Amplifier Gateway:
-Axelar Amplifier Gateway is a smart contract that lives on the external chain that is connecting to the Axelar Network. It faciliates sending and receiving of cross-chain messages to other chains via the Axelar Network. AxelarAmplifierGateway is the EVM reference implementation of the external gateway.
+Axelar Amplifier Gateway is a smart contract that lives on the external chain connecting to the Axelar Network. It facilitates the sending and receiving of cross-chain messages to other chains via the Axelar Network. AxelarAmplifierGateway is the EVM reference implementation of the external gateway.
 
 ## Links
 
