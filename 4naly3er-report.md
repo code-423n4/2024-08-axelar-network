@@ -22,8 +22,8 @@
 | [L-11](#L-11) | Prevent accidentally burning tokens | 32 |
 | [L-12](#L-12) | Owner can renounce while system is paused | 1 |
 | [L-13](#L-13) | Loss of precision | 4 |
-| [L-14](#L-14) | Solidity version 0.8.20+ may not work on other chains due to `PUSH0` | 16 |
-| [L-15](#L-15) | File allows a version of solidity that is susceptible to an assembly optimizer bug | 16 |
+| [L-14](#L-14) | Solidity version 0.8.20+ may not work on other chains due to `PUSH0` | 17 |
+| [L-15](#L-15) | File allows a version of solidity that is susceptible to an assembly optimizer bug | 17 |
 | [L-16](#L-16) | `symbol()` is not a part of the ERC-20 standard | 4 |
 | [L-17](#L-17) | Upgradeable contract not initialized | 8 |
 | [L-18](#L-18) | Use of ecrecover is susceptible to signature malleability | 1 |
@@ -351,7 +351,7 @@ File: ./contracts/utils/FlowLimit.sol
 ### <a name="L-14"></a>[L-14] Solidity version 0.8.20+ may not work on other chains due to `PUSH0`
 The compiler for Solidity 0.8.20 switches the default target EVM version to [Shanghai](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/#important-note), which includes the new `PUSH0` op code. This op code may not yet be implemented on all L2s, so deployment on these chains will fail. To work around this issue, use an earlier [EVM](https://docs.soliditylang.org/en/v0.8.20/using-the-compiler.html?ref=zaryabs.com#setting-the-evm-version-to-target) [version](https://book.getfoundry.sh/reference/config/solidity-compiler#evm_version). While the project itself may or may not compile with 0.8.20, other projects with which it integrates, or which extend this project may, and those projects will have problems deploying these contracts/libraries.
 
-*Instances (16)*:
+*Instances (17)*:
 ```solidity
 File: ./contracts/InterchainTokenFactory.sol
 
@@ -368,6 +368,13 @@ File: ./contracts/InterchainTokenService.sol
 
 ```solidity
 File: ./contracts/TokenHandler.sol
+
+3: pragma solidity ^0.8.0;
+
+```
+
+```solidity
+File: ./contracts/interchain-token/ERC20.sol
 
 3: pragma solidity ^0.8.0;
 
@@ -467,7 +474,7 @@ File: ./contracts/utils/TokenManagerDeployer.sol
 ### <a name="L-15"></a>[L-15] File allows a version of solidity that is susceptible to an assembly optimizer bug
 In solidity versions 0.8.13 and 0.8.14, there is an [optimizer bug](https://github.com/ethereum/solidity-blog/blob/499ab8abc19391be7b7b34f88953a067029a5b45/_posts/2022-06-15-inline-assembly-memory-side-effects-bug.md) where, if the use of a variable is in a separate `assembly` block from the block in which it was stored, the `mstore` operation is optimized out, leading to uninitialized memory. The code currently does not have such a pattern of execution, but it does use `mstore`s in `assembly` blocks, so it is a risk for future changes. The affected solidity versions should be avoided if at all possible.
 
-*Instances (16)*:
+*Instances (17)*:
 ```solidity
 File: ./contracts/InterchainTokenFactory.sol
 
@@ -484,6 +491,13 @@ File: ./contracts/InterchainTokenService.sol
 
 ```solidity
 File: ./contracts/TokenHandler.sol
+
+3: pragma solidity ^0.8.0;
+
+```
+
+```solidity
+File: ./contracts/interchain-token/ERC20.sol
 
 3: pragma solidity ^0.8.0;
 
@@ -645,6 +659,7 @@ File: ./contracts/interchain-token/ERC20Permit.sol
 | |Issue|Instances|
 |-|:-|:-:|
 | [M-1](#M-1) | Centralization Risk for trusted owners | 15 |
+| [M-2](#M-2) | `increaseAllowance/decreaseAllowance` won't work on mainnet for USDT | 2 |
 ### <a name="M-1"></a>[M-1] Centralization Risk for trusted owners
 
 #### Impact:
@@ -711,6 +726,18 @@ File: ./contracts/utils/Operator.sol
 
 ```
 
+### <a name="M-2"></a>[M-2] `increaseAllowance/decreaseAllowance` won't work on mainnet for USDT
+On mainnet, the mitigation to be compatible with `increaseAllowance/decreaseAllowance` isn't applied: https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#code, meaning it reverts on setting a non-zero & non-max allowance, unless the allowance is already zero.
+
+*Instances (2)*:
+```solidity
+File: ./contracts/interchain-token/ERC20.sol
+
+104:     function increaseAllowance(address spender, uint256 addedValue) external virtual returns (bool) {
+
+123:     function decreaseAllowance(address spender, uint256 subtractedValue) external virtual returns (bool) {
+
+```
 
 # For the EVM Amplifier Gateway contracts:
 
