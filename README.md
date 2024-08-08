@@ -272,181 +272,180 @@ cargo test
 
 
 - Test Coverage for Interchain Token Service contracts: 
-<pre>----------------------------------------|----------|----------|----------|----------|----------------|
-File                                    |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
-----------------------------------------|----------|----------|----------|----------|----------------|
- <font color="#26A269"><b>contracts/                            </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    95.76</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    99.18</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainTokenFactory.sol           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainTokenService.sol           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    95.68</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>TokenHandler.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    94.23</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    95.38</b></font> |<font color="#C01C28"><b>     78,116,155</b></font> |
- <font color="#26A269"><b>contracts/executable/                 </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainTokenExecutable.sol        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainTokenExpressExecutable.sol </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>contracts/interchain-token/           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ERC20.sol                            </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ERC20Permit.sol                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainToken.sol                  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainTokenStandard.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>contracts/interfaces/                 </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAddressTracker.sol                  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IBaseTokenManager.sol                </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IERC20BurnableFrom.sol               </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IERC20MintableBurnable.sol           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IERC20Named.sol                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IFlowLimit.sol                       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IGatewayCaller.sol                   </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainToken.sol                 </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainTokenDeployer.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainTokenExecutable.sol       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainTokenExpressExecutable.sol</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainTokenFactory.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainTokenService.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainTokenStandard.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IMinter.sol                          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IOperator.sol                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITokenHandler.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITokenManager.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITokenManagerDeployer.sol            </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITokenManagerImplementation.sol      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITokenManagerProxy.sol               </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITokenManagerType.sol                </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITransmitInterchainToken.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>contracts/proxies/                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainProxy.sol                  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>TokenManagerProxy.sol                </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>contracts/token-manager/              </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    96.15</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>TokenManager.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    96.15</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>contracts/types/                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainTokenServiceTypes.sol      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>contracts/utils/                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>     87.5</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    97.44</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Create3AddressFixed.sol              </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Create3Fixed.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    83.33</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>FlowLimit.sol                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>GatewayCaller.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    83.33</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    85.71</b></font> |<font color="#C01C28"><b>         64,116</b></font> |
-  <font color="#26A269"><b>InterchainTokenDeployer.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#A2734C"><b>       75</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Minter.sol                           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Operator.sol                         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>RolesConstants.sol                   </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>TokenManagerDeployer.sol             </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#A2734C"><b>       50</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-----------------------------------------|----------|----------|----------|----------|----------------|
-<font color="#26A269"><b>All files                              </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    95.45</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    99.11</b></font> |<font color="#C01C28"><b>               </b></font> |
-----------------------------------------|----------|----------|----------|----------|----------------|
-</pre>
+
+| File                                    |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Lines |
+|-----------------------------------------|----------|----------|----------|----------|-----------------|
+| contracts/                              |      100 |    95.76 |      100 |    99.18 |                 |
+|   InterchainTokenFactory.sol            |      100 |      100 |      100 |      100 |                 |
+|   InterchainTokenService.sol            |      100 |    95.68 |      100 |      100 |                 |
+|   TokenHandler.sol                      |      100 |    94.23 |      100 |    95.38 |      78,116,155 |
+| contracts/executable/                   |      100 |      100 |      100 |      100 |                 |
+|   InterchainTokenExecutable.sol         |      100 |      100 |      100 |      100 |                 |
+|   InterchainTokenExpressExecutable.sol  |      100 |      100 |      100 |      100 |                 |
+| contracts/interchain-token/             |      100 |      100 |      100 |      100 |                 |
+|   ERC20.sol                             |      100 |      100 |      100 |      100 |                 |
+|   ERC20Permit.sol                       |      100 |      100 |      100 |      100 |                 |
+|   InterchainToken.sol                   |      100 |      100 |      100 |      100 |                 |
+|   InterchainTokenStandard.sol           |      100 |      100 |      100 |      100 |                 |
+| contracts/interfaces/                   |      100 |      100 |      100 |      100 |                 |
+|   IAddressTracker.sol                   |      100 |      100 |      100 |      100 |                 |
+|   IBaseTokenManager.sol                 |      100 |      100 |      100 |      100 |                 |
+|   IERC20BurnableFrom.sol                |      100 |      100 |      100 |      100 |                 |
+|   IERC20MintableBurnable.sol            |      100 |      100 |      100 |      100 |                 |
+|   IERC20Named.sol                       |      100 |      100 |      100 |      100 |                 |
+|   IFlowLimit.sol                        |      100 |      100 |      100 |      100 |                 |
+|   IGatewayCaller.sol                    |      100 |      100 |      100 |      100 |                 |
+|   IInterchainToken.sol                  |      100 |      100 |      100 |      100 |                 |
+|   IInterchainTokenDeployer.sol          |      100 |      100 |      100 |      100 |                 |
+|   IInterchainTokenExecutable.sol        |      100 |      100 |      100 |      100 |                 |
+|   IInterchainTokenExpressExecutable.sol |      100 |      100 |      100 |      100 |                 |
+|   IInterchainTokenFactory.sol           |      100 |      100 |      100 |      100 |                 |
+|   IInterchainTokenService.sol           |      100 |      100 |      100 |      100 |                 |
+|   IInterchainTokenStandard.sol          |      100 |      100 |      100 |      100 |                 |
+|   IMinter.sol                           |      100 |      100 |      100 |      100 |                 |
+|   IOperator.sol                         |      100 |      100 |      100 |      100 |                 |
+|   ITokenHandler.sol                     |      100 |      100 |      100 |      100 |                 |
+|   ITokenManager.sol                     |      100 |      100 |      100 |      100 |                 |
+|   ITokenManagerDeployer.sol             |      100 |      100 |      100 |      100 |                 |
+|   ITokenManagerImplementation.sol       |      100 |      100 |      100 |      100 |                 |
+|   ITokenManagerProxy.sol                |      100 |      100 |      100 |      100 |                 |
+|   ITokenManagerType.sol                 |      100 |      100 |      100 |      100 |                 |
+|   ITransmitInterchainToken.sol          |      100 |      100 |      100 |      100 |                 |
+| contracts/proxies/                      |      100 |      100 |      100 |      100 |                 |
+|   InterchainProxy.sol                   |      100 |      100 |      100 |      100 |                 |
+|   TokenManagerProxy.sol                 |      100 |      100 |      100 |      100 |                 |
+| contracts/token-manager/                |      100 |    96.15 |      100 |      100 |                 |
+|   TokenManager.sol                      |      100 |    96.15 |      100 |      100 |                 |
+| contracts/types/                        |      100 |      100 |      100 |      100 |                 |
+|   InterchainTokenServiceTypes.sol       |      100 |      100 |      100 |      100 |                 |
+| contracts/utils/                        |      100 |     87.5 |      100 |    97.44 |                 |
+|   Create3AddressFixed.sol               |      100 |      100 |      100 |      100 |                 |
+|   Create3Fixed.sol                      |      100 |    83.33 |      100 |      100 |                 |
+|   FlowLimit.sol                         |      100 |      100 |      100 |      100 |                 |
+|   GatewayCaller.sol                     |      100 |    83.33 |      100 |    85.71 |          64,116 |
+|   InterchainTokenDeployer.sol           |      100 |       75 |      100 |      100 |                 |
+|   Minter.sol                            |      100 |      100 |      100 |      100 |                 |
+|   Operator.sol                          |      100 |      100 |      100 |      100 |                 |
+|   RolesConstants.sol                    |      100 |      100 |      100 |      100 |                 |
+|   TokenManagerDeployer.sol              |      100 |       50 |      100 |      100 |                 |
+|-----------------------------------------|----------|----------|----------|----------|-----------------|
+| All files                               |      100 |    95.45 |      100 |    99.11 |                 |
+|-----------------------------------------|----------|----------|----------|----------|-----------------|
+
 
 - Test coverage for EVM Amplifier Gateway contracts: 
 
-<pre>-------------------------------------|----------|----------|----------|----------|----------------|
-File                                 |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
--------------------------------------|----------|----------|----------|----------|----------------|
- <font color="#26A269"><b>deploy/                            </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    94.44</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ConstAddressDeployer.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Create2.sol                       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Create2Deployer.sol               </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Create3.sol                       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    83.33</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Create3Address.sol                </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Create3Deployer.sol               </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>CreateDeploy.sol                  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Deployer.sol                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>executable/                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    81.82</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarExecutable.sol              </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#A2734C"><b>       60</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarGMPExecutable.sol           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarGMPExecutableWithToken.sol  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>express/                           </b></font> |<font color="#26A269"><b>    97.73</b></font> |<font color="#26A269"><b>    95.24</b></font> |<font color="#26A269"><b>    83.33</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarExpressExecutable.sol       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#A2734C"><b>    71.43</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarValuedExpressExecutable.sol </b></font> |<font color="#26A269"><b>    95.92</b></font> |<font color="#26A269"><b>    91.67</b></font> |<font color="#A2734C"><b>    77.78</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ExpressExecutorTracker.sol        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>gas-estimation/                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    91.67</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    97.83</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainGasEstimation.sol       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    91.67</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    97.83</b></font> |<font color="#C01C28"><b>            103</b></font> |
- <font color="#26A269"><b>gateway/                           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarAmplifierGateway.sol        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarAmplifierGatewayProxy.sol   </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>BaseAmplifierGateway.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>governance/                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AxelarServiceGovernance.sol       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>BaseMultisig.sol                  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>BaseWeightedMultisig.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainGovernance.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainMultisig.sol            </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Multisig.sol                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>interfaces/                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarAmplifierAuth.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarAmplifierGateway.sol       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarAmplifierGatewayAuth.sol   </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarExecutable.sol             </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarExpressExecutable.sol      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarGMPExecutable.sol          </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarGMPExecutableWithToken.sol </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarGMPGateway.sol             </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarGMPGatewayWithToken.sol    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarGasService.sol             </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarGateway.sol                </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarServiceGovernance.sol      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IAxelarValuedExpressExecutable.sol</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IBaseAmplifierGateway.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IBaseMultisig.sol                 </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IBaseWeightedMultisig.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ICaller.sol                       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IContractExecutor.sol             </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IContractIdentifier.sol           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IDeploy.sol                       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IDeployer.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IERC20.sol                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IERC20MintableBurnable.sol        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IFinalProxy.sol                   </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IGovernable.sol                   </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IImplementation.sol               </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInitProxy.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainAddressTracker.sol     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainGasEstimation.sol      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainGovernance.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IInterchainMultisig.sol           </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IMulticall.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IMultisig.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IOperators.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IOwnable.sol                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IPausable.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IProxy.sol                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IReentrancyGuard.sol              </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IRoles.sol                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IRolesBase.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ITimeLock.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>IUpgradable.sol                   </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>libs/                              </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>    84.38</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AddressBytes.sol                  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AddressString.sol                 </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Bytes32String.sol                 </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ContractAddress.sol               </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ECDSA.sol                         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#A2734C"><b>       50</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>SafeNativeTransfer.sol            </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>SafeTransfer.sol                  </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#A2734C"><b>       75</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>StringStorage.sol                 </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>types/                             </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>AmplifierGatewayTypes.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>GasEstimationTypes.sol            </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>WeightedMultisigTypes.sol         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>upgradable/                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>BaseProxy.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>FinalProxy.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>FixedProxy.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Implementation.sol                </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InitProxy.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Proxy.sol                         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Upgradable.sol                    </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
- <font color="#26A269"><b>utils/                             </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Caller.sol                        </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>InterchainAddressTracker.sol      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Multicall.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Operators.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Ownable.sol                       </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Pausable.sol                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>ReentrancyGuard.sol               </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>Roles.sol                         </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>RolesBase.sol                     </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
-  <font color="#26A269"><b>TimeLock.sol                      </b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#26A269"><b>      100</b></font> |<font color="#C01C28"><b>               </b></font> |
--------------------------------------|----------|----------|----------|----------|----------------|
-<font color="#26A269"><b>All files                           </b></font> |<font color="#26A269"><b>    99.64</b></font> |<font color="#26A269"><b>    97.59</b></font> |<font color="#26A269"><b>    97.65</b></font> |<font color="#26A269"><b>    99.86</b></font> |<font color="#C01C28"><b>               </b></font> |
--------------------------------------|----------|----------|----------|----------|----------------|
-</pre>
+| File                                 |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Lines |
+|--------------------------------------|----------|----------|----------|----------|-----------------|
+| deploy/                              |      100 |    94.44 |      100 |      100 |                 |
+|   ConstAddressDeployer.sol           |      100 |      100 |      100 |      100 |                 |
+|   Create2.sol                        |      100 |      100 |      100 |      100 |                 |
+|   Create2Deployer.sol                |      100 |      100 |      100 |      100 |                 |
+|   Create3.sol                        |      100 |    83.33 |      100 |      100 |                 |
+|   Create3Address.sol                 |      100 |      100 |      100 |      100 |                 |
+|   Create3Deployer.sol                |      100 |      100 |      100 |      100 |                 |
+|   CreateDeploy.sol                   |      100 |      100 |      100 |      100 |                 |
+|   Deployer.sol                       |      100 |      100 |      100 |      100 |                 |
+| executable/                          |      100 |      100 |    81.82 |      100 |                 |
+|   AxelarExecutable.sol               |      100 |      100 |       60 |      100 |                 |
+|   AxelarGMPExecutable.sol            |      100 |      100 |      100 |      100 |                 |
+|   AxelarGMPExecutableWithToken.sol   |      100 |      100 |      100 |      100 |                 |
+| express/                             |    97.73 |    95.24 |    83.33 |      100 |                 |
+|   AxelarExpressExecutable.sol        |      100 |      100 |    71.43 |      100 |                 |
+|   AxelarValuedExpressExecutable.sol  |    95.92 |    91.67 |    77.78 |      100 |                 |
+|   ExpressExecutorTracker.sol         |      100 |      100 |      100 |      100 |                 |
+| gas-estimation/                      |      100 |    91.67 |      100 |    97.83 |                 |
+|   InterchainGasEstimation.sol        |      100 |    91.67 |      100 |    97.83 |             103 |
+| gateway/                             |      100 |      100 |      100 |      100 |                 |
+|   AxelarAmplifierGateway.sol         |      100 |      100 |      100 |      100 |                 |
+|   AxelarAmplifierGatewayProxy.sol    |      100 |      100 |      100 |      100 |                 |
+|   BaseAmplifierGateway.sol           |      100 |      100 |      100 |      100 |                 |
+| governance/                          |      100 |      100 |      100 |      100 |                 |
+|   AxelarServiceGovernance.sol        |      100 |      100 |      100 |      100 |                 |
+|   BaseMultisig.sol                   |      100 |      100 |      100 |      100 |                 |
+|   BaseWeightedMultisig.sol           |      100 |      100 |      100 |      100 |                 |
+|   InterchainGovernance.sol           |      100 |      100 |      100 |      100 |                 |
+|   InterchainMultisig.sol             |      100 |      100 |      100 |      100 |                 |
+|   Multisig.sol                       |      100 |      100 |      100 |      100 |                 |
+| interfaces/                          |      100 |      100 |      100 |      100 |                 |
+|   IAxelarAmplifierAuth.sol           |      100 |      100 |      100 |      100 |                 |
+|   IAxelarAmplifierGateway.sol        |      100 |      100 |      100 |      100 |                 |
+|   IAxelarAmplifierGatewayAuth.sol    |      100 |      100 |      100 |      100 |                 |
+|   IAxelarExecutable.sol              |      100 |      100 |      100 |      100 |                 |
+|   IAxelarExpressExecutable.sol       |      100 |      100 |      100 |      100 |                 |
+|   IAxelarGMPExecutable.sol           |      100 |      100 |      100 |      100 |                 |
+|   IAxelarGMPExecutableWithToken.sol  |      100 |      100 |      100 |      100 |                 |
+|   IAxelarGMPGateway.sol              |      100 |      100 |      100 |      100 |                 |
+|   IAxelarGMPGatewayWithToken.sol     |      100 |      100 |      100 |      100 |                 |
+|   IAxelarGasService.sol              |      100 |      100 |      100 |      100 |                 |
+|   IAxelarGateway.sol                 |      100 |      100 |      100 |      100 |                 |
+|   IAxelarServiceGovernance.sol       |      100 |      100 |      100 |      100 |                 |
+|   IAxelarValuedExpressExecutable.sol |      100 |      100 |      100 |      100 |                 |
+|   IBaseAmplifierGateway.sol          |      100 |      100 |      100 |      100 |                 |
+|   IBaseMultisig.sol                  |      100 |      100 |      100 |      100 |                 |
+|   IBaseWeightedMultisig.sol          |      100 |      100 |      100 |      100 |                 |
+|   ICaller.sol                        |      100 |      100 |      100 |      100 |                 |
+|   IContractExecutor.sol              |      100 |      100 |      100 |      100 |                 |
+|   IContractIdentifier.sol            |      100 |      100 |      100 |      100 |                 |
+|   IDeploy.sol                        |      100 |      100 |      100 |      100 |                 |
+|   IDeployer.sol                      |      100 |      100 |      100 |      100 |                 |
+|   IERC20.sol                         |      100 |      100 |      100 |      100 |                 |
+|   IERC20MintableBurnable.sol         |      100 |      100 |      100 |      100 |                 |
+|   IFinalProxy.sol                    |      100 |      100 |      100 |      100 |                 |
+|   IGovernable.sol                    |      100 |      100 |      100 |      100 |                 |
+|   IImplementation.sol                |      100 |      100 |      100 |      100 |                 |
+|   IInitProxy.sol                     |      100 |      100 |      100 |      100 |                 |
+|   IInterchainAddressTracker.sol      |      100 |      100 |      100 |      100 |                 |
+|   IInterchainGasEstimation.sol       |      100 |      100 |      100 |      100 |                 |
+|   IInterchainGovernance.sol          |      100 |      100 |      100 |      100 |                 |
+|   IInterchainMultisig.sol            |      100 |      100 |      100 |      100 |                 |
+|   IMulticall.sol                     |      100 |      100 |      100 |      100 |                 |
+|   IMultisig.sol                      |      100 |      100 |      100 |      100 |                 |
+|   IOperators.sol                     |      100 |      100 |      100 |      100 |                 |
+|   IOwnable.sol                       |      100 |      100 |      100 |      100 |                 |
+|   IPausable.sol                      |      100 |      100 |      100 |      100 |                 |
+|   IProxy.sol                         |      100 |      100 |      100 |      100 |                 |
+|   IReentrancyGuard.sol               |      100 |      100 |      100 |      100 |                 |
+|   IRoles.sol                         |      100 |      100 |      100 |      100 |                 |
+|   IRolesBase.sol                     |      100 |      100 |      100 |      100 |                 |
+|   ITimeLock.sol                      |      100 |      100 |      100 |      100 |                 |
+|   IUpgradable.sol                    |      100 |      100 |      100 |      100 |                 |
+| libs/                                |      100 |    84.38 |      100 |      100 |                 |
+|   AddressBytes.sol                   |      100 |      100 |      100 |      100 |                 |
+|   AddressString.sol                  |      100 |      100 |      100 |      100 |                 |
+|   Bytes32String.sol                  |      100 |      100 |      100 |      100 |                 |
+|   ContractAddress.sol                |      100 |      100 |      100 |      100 |                 |
+|   ECDSA.sol                          |      100 |       50 |      100 |      100 |                 |
+|   SafeNativeTransfer.sol             |      100 |      100 |      100 |      100 |                 |
+|   SafeTransfer.sol                   |      100 |       75 |      100 |      100 |                 |
+|   StringStorage.sol                  |      100 |      100 |      100 |      100 |                 |
+| types/                               |      100 |      100 |      100 |      100 |                 |
+|   AmplifierGatewayTypes.sol          |      100 |      100 |      100 |      100 |                 |
+|   GasEstimationTypes.sol             |      100 |      100 |      100 |      100 |                 |
+|   WeightedMultisigTypes.sol          |      100 |      100 |      100 |      100 |                 |
+| upgradable/                          |      100 |      100 |      100 |      100 |                 |
+|   BaseProxy.sol                      |      100 |      100 |      100 |      100 |                 |
+|   FinalProxy.sol                     |      100 |      100 |      100 |      100 |                 |
+|   FixedProxy.sol                     |      100 |      100 |      100 |      100 |                 |
+|   Implementation.sol                 |      100 |      100 |      100 |      100 |                 |
+|   InitProxy.sol                      |      100 |      100 |      100 |      100 |                 |
+|   Proxy.sol                          |      100 |      100 |      100 |      100 |                 |
+|   Upgradable.sol                     |      100 |      100 |      100 |      100 |                 |
+| utils/                               |      100 |      100 |      100 |      100 |                 |
+|   Caller.sol                         |      100 |      100 |      100 |      100 |                 |
+|   InterchainAddressTracker.sol       |      100 |      100 |      100 |      100 |                 |
+|   Multicall.sol                      |      100 |      100 |      100 |      100 |                 |
+|   Operators.sol                      |      100 |      100 |      100 |      100 |                 |
+|   Ownable.sol                        |      100 |      100 |      100 |      100 |                 |
+|   Pausable.sol                       |      100 |      100 |      100 |      100 |                 |
+|   ReentrancyGuard.sol                |      100 |      100 |      100 |      100 |                 |
+|   Roles.sol                          |      100 |      100 |      100 |      100 |                 |
+|   RolesBase.sol                      |      100 |      100 |      100 |      100 |                 |
+|   TimeLock.sol                       |      100 |      100 |      100 |      100 |                 |
+|--------------------------------------|----------|----------|----------|----------|-----------------|
+| All files                            |    99.64 |    97.59 |    97.65 |    99.86 |                 |
+|--------------------------------------|----------|----------|----------|----------|-----------------|
+
 ## Miscellaneous
 Employees of AXELAR and employees' family members are ineligible to participate in this audit.
 
