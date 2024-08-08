@@ -21,7 +21,7 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 - Please refer to [previous audits](https://github.com/axelarnetwork/audits/tree/main), especially for `AxelarAmplifierGateway`, `interchain-token-service`, `axelar-amplifier`
 
 ### Publicly Known Issues: 
-#### ITS hub balance tracking should be applied when minter isn't set (https://github.com/axelarnetwork/interchain-token-service/issues/270)
+**ITS hub balance tracking should be applied when minter isn't set (https://github.com/axelarnetwork/interchain-token-service/issues/270)**
 - ITS Hub balance tracking should only be applied when the minter isn't set in the deploy Interchain Token message type. If a minter is set, then the balance invariants can't be preserved since the minter address can mint on the remote chain. This is a fine trade off for custom tokens who want more control. The balance invariant is more so intended for the common use case of deploying a [canonical ITS token](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/InterchainTokenFactory.sol#L209) or a [trustless native interchain token](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/InterchainTokenFactory.sol#L182) to remote chains via the Factory, where the minter isn't set.
 Hence, additionally [check](https://github.com/axelarnetwork/axelar-amplifier/blob/feat/its-hub/interchain-token-service/src/contract/execute.rs#L136) if minter length is 0 in ITS hub to enable tracking.
 
