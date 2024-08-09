@@ -16,7 +16,7 @@ ITS Hub maintains balance invariants for native interchain tokens for every chai
 
 ### Cross-chain messaging
 
-The ITS Hub makes use of the Axelarnet gateway contract to facilitate 
+The ITS Hub makes use of the Axelarnet gateway contract to facilitate sending or receiving cross-chain message. Messages are sent via `CallContract`, and received when the Axelarnet gateway is executed (by a relayer / user) through `Execute`, which in turn executes ITS Hub's `Execute` method.
 
 ## Build
 
