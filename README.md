@@ -41,6 +41,9 @@ The Interchain Amplifier enables developers to permissionlessly set up connectio
 ## Axelar Amplifier Gateway:
 Axelar Amplifier Gateway is a smart contract that lives on the external chain connecting to the Axelar Network. It facilitates the sending and receiving of cross-chain messages to other chains via the Axelar Network. AxelarAmplifierGateway is the EVM reference implementation of the external gateway.
 
+## ITS Token Hub for Amplifier
+- Tech Spec: [ITS Token hub design for Amplifier](https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350)
+
 ## Links
 
 - **Previous audits:**  https://github.com/axelarnetwork/audits?tab=readme-ov-file
