@@ -43,6 +43,7 @@ Axelar Amplifier Gateway is a smart contract that lives on the external chain co
 
 ## ITS Token Hub for Amplifier
 - Tech Spec: [ITS Token hub design for Amplifier](https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350)
+- Design Notes: [Design Notes (Aug 2024)](https://bright-ambert-2bd.notion.site/C4E-Audit-Axelar-Amplifier-Design-Notes-Aug-2024-External-5ded3250fa504e3e882e9551179b7548)
 
 ## Links
 
@@ -52,9 +53,6 @@ Axelar Amplifier Gateway is a smart contract that lives on the external chain co
 - **X/Twitter:** https://twitter.com/axelarnetwork
 - **Discord:** https://discord.com/invite/aRZ3Ra6f7D
 - **Youtube:** https://www.youtube.com/@axelar-network
-
-## FAQs
-- **Frequently Asked Questions:** [C4E Audit (Axelar Amplifier) - FAQs (Aug 2024)](https://bright-ambert-2bd.notion.site/C4E-Audit-Axelar-Amplifier-FAQs-Aug-2024-External-5ded3250fa504e3e882e9551179b7548)
 
 ---
 
