@@ -53,6 +53,9 @@ Axelar Amplifier Gateway is a smart contract that lives on the external chain co
 - **Discord:** https://discord.com/invite/aRZ3Ra6f7D
 - **Youtube:** https://www.youtube.com/@axelar-network
 
+## FAQs
+- **Frequently Asked Questions:** [C4E Audit (Axelar Amplifier) - FAQs (Aug 2024)](https://bright-ambert-2bd.notion.site/C4E-Audit-Axelar-Amplifier-FAQs-Aug-2024-External-5ded3250fa504e3e882e9551179b7548)
+
 ---
 
 # Scope
