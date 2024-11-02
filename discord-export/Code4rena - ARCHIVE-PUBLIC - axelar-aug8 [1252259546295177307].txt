@@ -1,0 +1,816 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-PUBLIC / axelar-aug8
+==============================================================
+
+[08/05/2024 20:51] itsmetechjay (pinned)
+👋 Hello and welcome to the audit channel for the **$85,000 in USDC Axelar Network** audit!
+
+📆 Audit opens Thursday, 08 August 2024 20:00 (20:00 UTC) and runs through Monday, 26 August 2024 20:00 (20:00 UTC) (18 days).
+
+Please give a warm welcome to the Axelar Network team, particularly @Milap | Axelar, @ahramy, @Foivos, @liana, and @sergey, who will be available for questions either here in the channel or via a PRIVATE thread in the EST/PST (UTC-7) timezones. 
+
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try, by tagging `@Docs Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.  
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-08-axelar-network
+
+
+[08/05/2024 20:51] itsmetechjay
+Pinned a message.
+
+
+[08/08/2024 20:11] mctoady
+Correct that the final SLOC is ~1k lines more than in https://discord.com/channels/810916927919620096/958800160870240286/1269056648798929016 ?
+
+{Reactions}
+👀 
+
+[08/08/2024 20:22] 4gontuk
+Rust + Solidity 👀
+
+
+[08/08/2024 20:39] itsmetechjay
+Yes SLOC in the repo is correct. 🙂
+
+{Reactions}
+👍 
+
+[08/09/2024 08:31] pfapostol
+I'm trying to port the JS ITS deploy script to foundry can someone confirm if this is the correct use for `create3Deployer`.
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/InterchainTokenService-584A7.sol
+
+
+[08/09/2024 08:36] pfapostol
+Overall everything works as expected, but I may have gotten some details wrong.
+
+
+[08/09/2024 11:10] binary_circuit
+Is this correct?
+
+
+[08/09/2024 11:15] ali_shehab.
+yes
+
+
+[08/09/2024 14:18] gd.eth
+Hi! This link seems to have no content
+https://bright-ambert-2bd.notion.site/6500bd49bd9a4e139936e8ebb97e592d?v=0d59d1bd0de145fa9e731c0d179219db&pvs=4
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/image-A8945.png
+
+
+[08/09/2024 15:46] pwnforce
+you can find the file in the audits directory. just look for the date there.
+
+{Reactions}
+👍 
+
+[08/09/2024 17:59] uaarrr
+``` InterchainTokenExecutable.sol ```  &  ``` InterchainTokenExpressExecutable.sol```  are abstract but no contract inherits them
+
+
+[08/09/2024 19:10] ebok21
+these contracts are supposed to be inherited by the client protocols that want to implement the interchain token transfer functionality
+
+
+[08/09/2024 19:21] uaarrr
+can you explain more what this means or where in docs i can read to understand ?
+
+
+[08/09/2024 19:24] ebok21
+this basically means that the users (protocols) looking to implement custom logic for interchain interactions must inherit this contract
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/image-06A5E.png
+
+{Reactions}
+❤️ 
+
+[08/09/2024 19:25] ebok21
+since the ITS only implements stock functionality
+
+
+[08/09/2024 19:50] gulshn321
+testcases in rust arent in the scope??
+
+
+[08/09/2024 20:59] ladboy233
+is axelar supported for zksync?
+
+
+[08/09/2024 20:59] ladboy233
+or will the protocol support zksync?
+
+
+[08/09/2024 21:50] lianaspano
+we have resolved the empty content links
+
+{Reactions}
+thankyou (2) 
+
+[08/10/2024 02:07] ahramy
+no, testcases are not in the scope. you can refer to Scope Section in the readme: https://github.com/code-423n4/2024-08-axelar-network/blob/main/README.md#scope
+
+
+[08/10/2024 02:08] ahramy
+you can find it from Axelar Scan - Chains, search for zksync. https://axelarscan.io/resources/chains
+
+
+[08/10/2024 02:11] ahramy
+zksync is not supported as of today, I'm not sure Axelar will support zksync or not. Please check out the official Discord channel or community Forum (https://community.axelar.network/)
+
+
+[08/10/2024 04:33] entangled_qubit
+zkSync uses a different create2 derivation mechanism, so it would require some changes in the ITS token deployment to work as expected. And Axelar hasn't added zkSync yet as mentioned above
+
+
+[08/10/2024 04:38] entangled_qubit
+You can see an example flow with an ITS executable here
+https://github.com/code-423n4/2024-08-axelar-network/blob/main/interchain-token-service/test/InterchainTokenServiceFullFlow.js#L578
+
+
+[08/10/2024 04:45] entangled_qubit
+FYI You can test out the older ITS v1.2.4 release that's live in production via this UI. This version didn't have the ITS hub support, or gateway token support.
+https://testnet.interchain.axelar.dev/
+
+
+[08/10/2024 10:26] villy9172
+interchain-token-service/contracts/InterchainTokenService.sol 565 LOC but in reality it has over 1200, what does that mean?
+
+
+[08/10/2024 10:26] villy9172
+Should we look into the whole InterchainTokenService file or partially and if partially, from where to where?
+
+
+[08/10/2024 11:03] trachev
+It is 565 when you remove all of the comments and empty lines
+
+{Reactions}
+🆗 
+
+[08/10/2024 11:52] gulshn321
+https://gist.github.com/maurelian/a8c98a70e101353cbd280274a3f080b8
+
+{Embed}
+https://gist.github.com/maurelian/a8c98a70e101353cbd280274a3f080b8
+nsloc.md
+GitHub Gist: instantly share code, notes, and snippets.
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/gist-og-image-54fd7dc0713e-84C3B.png
+
+{Reactions}
+🔥 
+
+[08/10/2024 11:56] villy9172
+thx you both
+
+
+[08/10/2024 16:16] ahramy (pinned)
+Hi all, I'm sharing the ITS Token Hub for the Amplifier Technical Spec Document. It is well-written and contains helpful information to understand the terminology, background, and entire workflow: https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350
+
+{Reactions}
+thankyou (7) 
+
+[08/10/2024 16:16] kartoonjoy
+Pinned a message.
+
+
+[08/10/2024 17:13] gulshn321
+thanks sir
+
+
+[08/10/2024 19:49] uaarrr
+the  ``#[cfg(test)]`` tests are out of scope right ?
+
+
+[08/10/2024 23:15] ahramy
+Yes, tests are out of scope.
+
+
+[08/11/2024 14:22] castle_chain
+does the trusted address here be the Gateway on the destination chain or the Router ??  @ahramy 
+
+https://github.com/code-423n4/2024-08-axelar-network/blob/c383cc0e51805357bca8741ec5d1568cacbff6cc/axelar-amplifier/interchain-token-service/src/contract/execute.rs#L56-L57
+
+{Embed}
+https://github.com/code-423n4/2024-08-axelar-network/blob/c383cc0e51805357bca8741ec5d1568cacbff6cc/axelar-amplifier/interchain-token-service/src/contract/execute.rs
+2024-08-axelar-network/axelar-amplifier/interchain-token-service/sr...
+Contribute to code-423n4/2024-08-axelar-network development by creating an account on GitHub.
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/28ee5b1d-89f3-4ca7-b1dc-5f1e9f61b24e-A7444
+
+
+[08/12/2024 00:00] ahramy (pinned)
+please refer to the message flow diagram from this tech spec: https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350
+ITS hub is used to route ITS calls via it specifically. When it receives a GMP call (via axelarnet-gateway::Execute), it needs to ensure it is actually an ITS call, i.e it came from the trusted ITS edge contract on the source chain. This requires whitelisting the ITS addresses from each chain, similar to how each ITS edge contract is whitelisting trusted addresses.
+
+The axelarnet-gateway allows routing message to/from router as the other wasm gateway contract. But it also allows initiating messages to another chain, and executing messages that were received with for apps on Axelar.
+
+
+[08/12/2024 00:18] kartoonjoy
+Pinned a message.
+
+
+[08/12/2024 10:11] 0xsomnus
+is the utility code copied off somewhere or modified from existing code? by utility i mean the contracts in upgradable, libs etc
+
+
+[08/12/2024 16:22] ahramy
+No, utils used found here (https://github.com/axelarnetwork/axelar-gmp-sdk-solidity/tree/main/contracts/utils) and not in scope of the audit (they have been audited before)
+
+
+[08/12/2024 17:11] 0xsomnus
+oh sure but i was more asking out of curiosity i.e was it written from scratch or...?
+
+
+[08/12/2024 21:27] ahramy
+Yeah, mostly written from scratch tailormade to our needs. Open zeppelin’s contract upgradability pattern until their latest release was also not compatible with what we were doing (so we didn’t use some of their utils).
+
+
+[08/13/2024 15:49] castle_chain
+Can someone help me with this error when I tried to run this test 
+https://github.com/axelarnetwork/axelar-amplifier/blob/7473ec6f7798f1eb7bace1c9ef4cbe99198686d8/contracts/axelarnet-gateway/src/contract.rs#L147-L163
+
+I got this error which I think it related to CosmWasm-std  library 
+```
+
+error[E0599]: no method named `iter` found for struct `std::vec::Vec` in the current scope
+   --> /home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cosmwasm-std-1.5.5/src/testing/mock.rs:959:22
+    |
+957 |                   let validator: Option<Validator> = self
+    |  ____________________________________________________-
+958 | |                     .validators
+959 | |                     .iter()
+    | |                     -^^^^ method not found in `Vec<Validator>`
+    | |_____________________|
+    |
+
+Some errors have detailed explanations: E0277, E0369, E0432, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: could not compile `cosmwasm-std` (lib) due to 58 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `cosmwasm-std` (lib) due to 61 previous errors
+
+ *  The terminal process "cargo 'test', '--package', 'axelarnet-gateway', '--lib', '--', 'contract::tests::migrate_sets_contract_version', '--exact', '--show-output'" terminated with exit code: 101. 
+```
+
+what can be the solution ?
+
+
+[08/13/2024 17:11] jovemjeune
+Did you face with any error when you submitted  `cargo build`  on the terminal because now, `cargo test` works without any error for me  but I actually got an error when I first submitted  `cargo build` and the tests hadn't passed until fixing it. I feel like some of the dependencies are not correctly built in your computer but I'm not sure about it.
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/img-1C725.png
+
+
+[08/13/2024 17:37] castle_chain
+`cargo test` and `cargo build` work without errors in this directory 
+```
+/2024-08-axelar-network/axelar-amplifier/contracts
+```
+
+but all the errors show up when executing those commands here : 
+```
+2024-08-axelar-network/axelar-amplifier/contracts/axelarnet-gateway
+
+```
+
+
+[08/13/2024 18:22] jovemjeune
+Do you get another error when you try executing that commands at axelarnet-gateway or this is the only error show up on your terminal?Could you share the output of cargo build in case another error shows up? The solutions I found on the internet are not related that's why I ask for further information on bug but it is not consisting because of the path itself I tested that commands there as well.
+
+
+[08/13/2024 18:28] castle_chain
+There are  58 errors show up when calling `cargo build` all about trait bounds and trait implementations so I think the package has something wrong .
+
+you can see the full error msg here :
+https://github.com/Frankcastleauditor/Errors/blob/main/error.md
+
+{Embed}
+https://github.com/Frankcastleauditor/Errors/blob/main/error.md
+Errors/error.md at main · Frankcastleauditor/Errors
+Contribute to Frankcastleauditor/Errors development by creating an account on GitHub.
+
+
+[08/14/2024 12:09] no.one7777
+Is it will deployed in every chain which is in Axelarscan ?
+
+
+[08/14/2024 16:33] villy9172
+Are the project files in scope currently deployed on mainnet?
+
+
+[08/14/2024 20:15] 0xsomnus
+@ahramy just to confirm, the expected behaviour is that you should be able to call any contract on another chain via axelar and as long as it implements the sdk, it should be called, yes?
+
+
+[08/14/2024 22:54] ahramy (pinned)
+There are multiple components in Axelar. Please refer to tech spec https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350 for the audit.
+
+
+[08/14/2024 22:57] ahramy
+the project files (EVM Amplifier Gateway, ITS Hub rust) in scope is not deployed on mainnet yet.
+
+
+[08/14/2024 23:00] ahramy (pinned)
+The expected behaviour in general on Axelar Network, Yes, you can refer to https://github.com/axelarnetwork/axelar-examples and tutorial video: https://www.youtube.com/watch?v=L5_WG7KidCs&t=1s
+
+
+[08/14/2024 23:38] kartoonjoy
+Pinned a message.
+
+
+[08/14/2024 23:38] kartoonjoy
+Pinned a message.
+
+
+[08/15/2024 06:20] coffiasd
+@ahramy   gm ser , I send a message on PT
+
+{Reactions}
+✅ 
+
+[08/15/2024 07:06] mrpotatomagic
+@ahramy please check private thread when possible
+
+{Reactions}
+✅ 
+
+[08/15/2024 16:26] 0xsomnus
+but gmp sdk is?
+
+
+[08/15/2024 16:26] 0xsomnus
+okay, thanks!
+
+{Reactions}
+🙏 
+
+[08/16/2024 03:29] ahramy
+gmp-sdk/contracts/gateway for amplifier (https://github.com/code-423n4/2024-08-axelar-network/tree/69c4f2c3fcefb1b8eb2129af9c3685a44ae5b6fe/axelar-gmp-sdk-solidity/contracts/gateway) is also not deployed on mainnet yet.
+
+
+[08/16/2024 08:37] irving6969
+destination address can be address from non-evm chain?
+
+
+[08/16/2024 10:28] 0xpopeye
+@ahramy kindly check PT
+
+{Reactions}
+✅ 
+
+[08/16/2024 12:16] mansa11
+On what chains will this be deployed?
+
+
+[08/16/2024 12:55] mylifechangefast.eth_70767
+Please @ahramy check PT
+
+{Reactions}
+✅ 
+
+[08/16/2024 17:51] ahramy (pinned)
+yup, please refer to Flow section in the tech spec doc: https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350#dbce267e19c14106ae1e096a36e8a49a
+
+
+[08/16/2024 17:51] ahramy (pinned)
+Please refer to the tech spec doc: https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350#dbce267e19c14106ae1e096a36e8a49a
+
+
+[08/16/2024 18:16] kartoonjoy
+Pinned a message.
+
+
+[08/16/2024 18:16] kartoonjoy
+Pinned a message.
+
+
+[08/16/2024 18:17] kartoonjoy
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try, by tagging `@Docs Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.
+
+
+[08/16/2024 18:32] legendary_chipmunk_12536_18627
+Started a thread.
+
+
+[08/17/2024 04:59] ahramy (pinned)
+Hi all, I've created a design notes doc. When you have a moment, please take a look: https://bright-ambert-2bd.notion.site/C4E-Audit-Axelar-Amplifier-Design-Notes-Aug-2024-External-5ded3250fa504e3e882e9551179b7548
+
+{Reactions}
+🚀 (13) 
+
+[08/17/2024 08:09] whoismxuse
+Legend
+
+{Reactions}
+🙏 
+
+[08/17/2024 12:32] kartoonjoy
+Pinned a message.
+
+
+[08/17/2024 18:53] 0xpopeye
+Operator is a trusted role, isn't it?
+
+
+[08/17/2024 21:03] mylifechangefast.eth_70767
+Please @ahramy  check PT
+
+{Reactions}
+✅ 
+
+[08/18/2024 08:25] ahramy
+A valid proof is still required to be passed in. So all the operator can do is bypass the rotation delay. The operator can be overwritten by the owner (governance contract). In case of a compromise of one of the recent signer sets, the honest signers can coordinate with the operator to rotate out the malicious signer set.
+
+{Reactions}
+👍 (2) 
+
+[08/18/2024 12:07] villy9172
+@ahramy Can you check PT when you can, thank you.
+
+{Reactions}
+✅ 
+
+[08/18/2024 23:36] mylifechangefast.eth_70767
+PT @ahramy
+
+{Reactions}
+✅ (2) 
+
+[08/19/2024 12:45] pfapostol
+Have the audits listed in the README been performed on the current code or has this code been updated?
+
+
+[08/19/2024 20:38] ahramy (pinned)
+The code has been updated since the last audit. Please refer to the tech spec doc (C4E Audit Notes):  https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350
+design notes: https://bright-ambert-2bd.notion.site/C4E-Audit-Axelar-Amplifier-Design-Notes-Aug-2024-External-5ded3250fa504e3e882e9551179b7548
+
+
+[08/19/2024 20:59] itsmetechjay
+Pinned a message.
+
+
+[08/20/2024 18:36] wanziskata
++1 for the private thread, thank you
+
+{Reactions}
+✅ (3) 
+
+[08/21/2024 15:55] 4n0nx
+using axelar protocol can we transfer assets from evm to cosmos ? if there are any docs about it please provide the links
+do users have authorty to add a chain or toekn bridge?
+
+
+[08/21/2024 16:01] 4n0nx
+@ahramy,
+
+
+[08/21/2024 16:07] ahramy
+Please refer to various documents: 
+official doc: https://docs.axelar.dev/dev/intro
+Real-time transactions from https://axelarscan.io/
+Tech Design Spec: https://bright-ambert-2bd.notion.site/ITS-Token-Hub-External-dd30ee912d1e48e683d9488acf75e350?pvs=74
+Tech Design Notes: https://bright-ambert-2bd.notion.site/C4E-Audit-Axelar-Amplifier-Design-Notes-Aug-2024-External-5ded3250fa504e3e882e9551179b7548?pvs=74
+
+
+[08/21/2024 19:14] 4n0nx
+Thanks
+
+
+[08/21/2024 22:58] ethel_666
+Does the normal constructor get called when using "create3" deployment method??
+
+
+[08/22/2024 12:02] sp1cymeatball
+@ahramy hey! Does ITS contract supposed to hold any tokens on it's balance?
+
+
+[08/22/2024 14:08] petro_1912
+Started a thread.
+
+
+[08/22/2024 17:43] ahramy
+Yep, create3 makes it so the address is derived only based on the sender address and salt, and NOT the bytecode. Constructor is still called normally. This allows interchain tokens (and token managers) on different evm chains to have the same token address if they use the same tokenId.
+
+
+[08/22/2024 17:46] ahramy
+ITS is not meant to hold any tokens or ETH. It collects and sends them out immediately.
+
+{Reactions}
+thankyou 
+
+[08/23/2024 02:26] coffiasd
+User must trust token deployer and minter role ?
+
+{Reactions}
+✅ 
+
+[08/23/2024 07:57] mylifechangefast.eth_70767
+@ahramy please check PT
+
+{Reactions}
+✅ 
+
+[08/23/2024 13:59] .nnez
+@ahramy Kindly check my PT please 🙂
+
+{Reactions}
+✅ (2) 
+
+[08/23/2024 15:17] ahramy (pinned)
+The token deployer doesn’t need to be trusted if it’s deployed as a canonical ITS token. The minter role needs to be trusted if one is set. ITS factory allows the token deployer to set no minter. Furthermore, ITS factory prevents the token deployer from changing the token configuration for future deployments (token symbol, decimals etc.). Hence, tokens deployed via the ITS factory can be trusted more than the flexible deployments from ITS contract. Please provide more context if your question is still unresolved.
+
+{Reactions}
+✅ 
+
+[08/23/2024 15:18] kartoonjoy
+Pinned a message.
+
+
+[08/24/2024 10:09] covey0x07
+@ahramy please check my PT 😃
+
+{Reactions}
+✅ 
+
+[08/24/2024 19:30] evokid
+Hey @ahramy can you check my pvt thread 🙏 thanks
+
+{Reactions}
+✅ 
+
+[08/25/2024 14:27] jacobmartin0406
+@ahramy can you check the PT, plz?
+
+{Reactions}
+✅ 
+
+[08/26/2024 20:01] evokid
+Submitted on the last minute 😆
+
+{Reactions}
+😅 😆 
+
+[08/26/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺Wardens The **Axelar** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Feel free to ping a Civics-Admin if you have questions along the way!
+
+
+[08/26/2024 20:16] mansa11
+I was about submitting 🤦🏼‍♂️
+
+
+[08/26/2024 20:16] mansa11
+But the counter was still showing some few hours more
+
+
+[08/26/2024 20:16] mansa11
+I thought extra hours were added
+
+
+[08/26/2024 20:16] mansa11
+Is there a bounty for this?
+
+
+[08/26/2024 20:19] mansa11
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/IMG_0607-2EF96.jpg
+
+
+[08/26/2024 20:21] mansa11
+It still shows 2 hours left on my end🤦🏼‍♂️ just while I was perfecting the POC for a critical 🤕
+
+
+[08/26/2024 20:25] memorydump55555
+the tab was open whilst the machine was either sleep or something, and the time change didn't reflect on the tab 😦 sorry to hear bro. you can always report the bug on a different platform (i think) i can see they are on a different one but i won't mention in case it is against code4rena rules
+
+
+[08/26/2024 20:28] mansa11
+Thanks man.
+I’ll look into that
+
+
+[08/26/2024 23:08] kartoonjoy
+I'm sorry to hear that you missed the submission deadline! Extensions dont happen often but if it needs to happen, we'd announce it here in the audit channel.
+
+{Reactions}
+🙏 
+
+[08/27/2024 03:45] kirill_taran
+actually extension is not a bad idea, especially because it seems that Rust part is not really functioning according to the docs
+
+
+[08/27/2024 03:50] kirill_taran
+by the way, just curious -- how exactly `axelarnet-gateway` is connected to verifiers? it only communicates with `router` and other gateway by generic API. my understanding is that verification is done by source/destination in case of EVM-chains, but for non-EVM chains I don't see that `verifier`, `multisig`, `prover` modules are called by `axelarnet-gateway`. are these used implicitly by relayers? docs don't cover that, in fact relaying and so much of the system is out of scope, I think the scope numbers are pretty misleading. participants who never worked with Axelar before have to read at least 3 times more code than the actual scope.
+
+
+[08/27/2024 05:05] gulshn321
+i couldnt submit tooo
+
+
+[08/27/2024 05:05] gulshn321
+😕
+
+
+[08/27/2024 15:29] mylifechangefast.eth_70767
+🥺
+
+
+[08/28/2024 02:49] kirill_taran
+Will all confirmed findings be revealed to the public? Should we look for them here https://code4rena.com/audits/2024-08-axelar-network#top or another page?
+
+{Embed}
+https://code4rena.com/audits/2024-08-axelar-network
+Axelar Network | Code4rena
+$85,000 in USDC
+8 August 8:00 PM—26 August 8:00 PM
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/c4-og-v2-FB383.png
+
+
+[08/28/2024 03:21] rodiontrubnikov
+A report will be published
+
+
+[08/28/2024 03:26] kirill_taran
+I found the right section, thanks
+
+https://code4rena.com/reports
+
+{Embed}
+https://code4rena.com/reports
+Security Audit Reports | Code4rena
+Interested in learning more from past Code4rena competitive audits? View all Code4rena audit reports in one convenient location.
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/c4-og-v2-FB383.png
+
+
+[08/29/2024 10:55] skinneeomeje
+Please when will the escalation be open for warden?
+
+
+[08/29/2024 11:25] whoismxuse
+sponsor & judge still have to go through the issues, after that PJQA will open
+
+
+[08/29/2024 12:15] skinneeomeje
+Ok thank you
+
+
+[08/29/2024 12:16] skinneeomeje
+One last thing ser, will it be open on the c4 dapp or a link will be provided here
+
+
+[08/29/2024 12:57] .nnez
+PJQA is for SR (formerly backstage+) role only
+
+
+[08/29/2024 17:16] mylifechangefast.eth_70767
+How many subs?
+
+
+[09/18/2024 22:49] tobi0x18
+when PJQA?
+
+
+[09/19/2024 12:34] tobi0x18
+Nobody answers~ 😭
+
+
+[09/19/2024 12:35] jovemjeune
+I also wonder but feel like there is still time
+
+{Reactions}
+🥲 
+
+[09/19/2024 12:36] jovemjeune
+Almost nobody writes in the chat nowadays
+
+
+[09/19/2024 12:36] tobi0x18
+🤝
+
+{Reactions}
+🤝 
+
+[09/20/2024 01:45] 0xstalin
+it started today
+
+{Reactions}
+👍 (2) 
+
+[09/20/2024 05:24] coffiasd
+:hi5:
+
+
+[10/06/2024 21:42] klau5_
+https://tenor.com/view/gjirlfriend-gif-14457952604098199169
+
+{Embed}
+https://tenor.com/view/gjirlfriend-gif-14457952604098199169
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/gjirlfriend-729B5.png
+
+
+[10/08/2024 22:23] liveactionllamac4
+🤑 🎉  Awards for **Axelar Network**:
+
+$50,568.21 USDC » @klau5 
+$12,956.56 USDC » @0x007 
+$6,041.26 USDC » @gjaldon 
+$1,777.67 USDC » @Bauchibred 
+$947.37 USDC » @Sparrow 
+$905.90 USDC » @ZanyBonzy 
+$274.32 USDC » @ayden 
+$274.32 USDC » @grearlake 
+$274.32 USDC » @mxuse 
+$274.32 USDC » @trachev 
+$205.74 USDC » @jasonxiale 
+
+🏁 Findings summary
+--------------------------------------—
+2 High risk findings
+2 Medium risk findings
+85 wardens contributed
+
+Top Hunter: klau5
+Top Gatherer: klau5
+Top QA report: Bauchibred
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+⚠️ Awardees, be sure to review [this announcement](https://discord.com/channels/810916927919620096/810929015509483554/1272625452909072415) and fill in your tax info if you haven't already. This must be completed within 30 days (i.e. before Friday, 08 November 2024) to receive your award distribution for this audit.
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+❤️ (5) Clapping_Animated (4) 
+
+[10/09/2024 03:00] bizzyvinci
+Congrats @klau5 
+Brilliant findings
+
+{Reactions}
+❤️ (3) 
+
+[10/09/2024 09:01] mylifechangefast.eth_70767
+@0x007 nice one sir
+
+{Reactions}
+🫡 
+
+[10/14/2024 11:19] skinneeomeje
+Please where can I see the findings to this contest
+
+
+[10/14/2024 11:21] bizzyvinci
+SR role is required to view findings before the official report is published
+
+
+[10/14/2024 11:22] skinneeomeje
+Wow ok then
+
+
+[10/14/2024 11:22] bizzyvinci
+SR role https://docs.code4rena.com/roles/certified-contributors/sr-backstage-wardens
+Reports https://code4rena.com/reports
+
+{Embed}
+https://docs.code4rena.com/roles/certified-contributors/sr-backstage-wardens
+Security Researcher role (formerly +backstage wardens) | Code4rena
+
+{Embed}
+https://code4rena.com/reports
+Security Audit Reports | Code4rena
+Interested in learning more from past Code4rena competitive audits? View all Code4rena audit reports in one convenient location.
+Code4rena - ARCHIVE-PUBLIC - axelar-aug8 [1252259546295177307].txt_Files/c4-og-v2-79C84.png
+
+
+[10/17/2024 12:09] klau5_
+Has the reward already been distributed? I need to check because I recently changed my address..
+
+{Reactions}
+👀 ✅ 
+
+[10/23/2024 21:01] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted on Friday, 01 November 2024. Please make sure to grab anything you might need before then.
+
+
+[10/31/2024 20:13] itsmetechjay
+ℹ️ Reminder: this channel will be deleted after 24 hours.
+
+
+[11/01/2024 12:58] mylifechangefast.eth_70767
+Wen report
+
+
+==============================================================
+Exported 144 message(s)
+==============================================================
